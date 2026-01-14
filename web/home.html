@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home — Portfolio Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function(){
+      try {
+        var t = localStorage.getItem('theme');
+        if(t==='dark' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)){
+          document.documentElement.classList.add('dark');
+        }
+      } catch(e){}
+    })();
+  </script>
+  <script src="javascript.js" defer></script>
+</head>
+<body class="h-full font-poppins">
+  <div id="app" class="w-full h-full overflow-auto">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-300">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <svg id="logo-svg" class="w-12 h-12 animate-pulse-custom" viewBox="0 0 50 50" fill="none">
+            <circle cx="25" cy="25" r="23" stroke-width="2" stroke="#667eea" />
+            <path d="M15 25 L25 15 L35 25 L25 35 Z" fill="#667eea" opacity="0.8" />
+            <circle cx="25" cy="25" r="5" fill="#764ba2" />
+          </svg>
+          <a href="home.html" id="logo-text" class="font-playfair font-bold text-2xl">Portfolio Studio</a>
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="home.html" class="nav-link text-sm font-medium hover:opacity-70 transition-opacity">Home</a>
+          <a href="about.html" class="nav-link text-sm font-medium hover:opacity-70 transition-opacity">About</a>
+          <a href="skills.html" class="nav-link text-sm font-medium hover:opacity-70 transition-opacity">Skills</a>
+          <a href="projects.html" class="nav-link text-sm font-medium hover:opacity-70 transition-opacity">Projects</a>
+          <a href="contact.html" class="nav-link text-sm font-medium hover:opacity-70 transition-opacity">Contact</a>
+          <a href="login.html" id="login-btn" class="px-4 py-2 rounded-md text-sm font-medium hover:opacity-80 transition-opacity">Login</a>
+          <a href="signup.html" id="signup-btn" class="btn-interactive px-4 py-2 rounded-md text-sm font-medium font-semibold">Sign Up</a>
+        </div>
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden mt-4 p-4 rounded-lg glass">
+        <div class="flex flex-col gap-3">
+          <a href="home.html" class="mobile-link py-2 hover:opacity-70 transition-opacity">Home</a>
+          <a href="about.html" class="mobile-link py-2 hover:opacity-70 transition-opacity">About</a>
+          <a href="skills.html" class="mobile-link py-2 hover:opacity-70 transition-opacity">Skills</a>
+          <a href="projects.html" class="mobile-link py-2 hover:opacity-70 transition-opacity">Projects</a>
+          <a href="contact.html" class="mobile-link py-2 hover:opacity-70 transition-opacity">Contact</a>
+          <a href="login.html" id="mobile-login-btn" class="mobile-link py-2 hover:opacity-70 transition-opacity text-left">Login</a>
+          <a href="signup.html" id="mobile-signup-btn" class="mobile-link py-2 hover:opacity-70 transition-opacity text-left">Sign Up</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
+      <!-- Background Video -->
+      <video id="hero-video" class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline poster="assets/banner-poster.svg" aria-hidden="true" data-fallback-src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" data-fallback-poster="https://interactive-examples.mdn.mozilla.net/media/cc0-images/flower.jpg">
+        <source src="assets/WhatsApp Video 2026-01-14 at 1.29.04 PM.mp4" type="video/mp4">
+        Your browser does not support the video tag. <a href="assets/WhatsApp Video 2026-01-14 at 1.29.04 PM.mp4" target="_blank" rel="noopener">Open video</a>
+      </video>
+
+      <!-- Overlay -->
+      <div class="hero-video-overlay absolute inset-0 pointer-events-none"></div>
+      <button id="hero-volume-toggle" class="hero-volume-toggle" aria-label="Unmute banner video" title="Unmute banner video">🔇</button>
+
+      <div class="relative z-10 max-w-6xl mx-auto text-center">
+        <span id="hero-badge" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium mb-8 glass">
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span> Available for Projects
+        </span>
+        <h1 id="hero-title" class="font-playfair font-black text-6xl md:text-7xl lg:text-8xl leading-tight mb-6">
+          Creative Digital Studio
+        </h1>
+        <p id="hero-subtitle" class="text-xl md:text-2xl max-w-3xl mx-auto mb-10 opacity-90">
+          Crafting innovative web experiences with cutting-edge technology and stunning design
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="projects.html" class="btn-interactive group px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-3">
+            Explore Projects
+            <svg class="w-5 h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <a href="contact.html" class="btn-interactive px-10 py-4 rounded-full font-semibold text-lg border-2 transition-all duration-300 hover:scale-105">
+            Contact Me
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="py-12 px-6 border-t border-white border-opacity-10 mt-12">
+      <div class="max-w-7xl mx-auto text-center opacity-70">© 2024 Portfolio Studio. All rights reserved.</div>
+    </footer>
+  </div>
+</body>
+</html>

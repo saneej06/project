@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Portfolio Studio - WMA Final Project</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>(function(){try{var t=localStorage.getItem('theme'); if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();</script>
+
+  <script src="javascript.js" defer></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-poppins">
+  <div id="app" class="w-full h-full overflow-auto"><!-- Navigation Bar with Scroll Effect -->
+   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+     <div class="flex items-center gap-3"><!-- Animated Logo SVG -->
+      <svg id="logo-svg" class="w-12 h-12 animate-pulse-custom" viewBox="0 0 50 50" fill="none"><circle cx="25" cy="25" r="23" stroke-width="2" stroke="#667eea" /> <path d="M15 25 L25 15 L35 25 L25 35 Z" fill="#667eea" opacity="0.8" /> <circle cx="25" cy="25" r="5" fill="#764ba2" />
+      </svg><a id="logo-text" href="home.html" class="font-playfair font-bold text-2xl">Portfolio Studio</a>
+     </div><!-- Desktop Navigation -->
+     <div class="hidden md:flex items-center gap-8"><a href="home.html" class="nav-link text-sm font-medium hover:opacity-70 transition-opacity">Home</a> <a href="about.html" class="nav-link text-sm font-medium hover:opacity-70 transition-opacity">About</a> <a href="skills.html" class="nav-link text-sm font-medium hover:opacity-70 transition-opacity">Skills</a> <a href="projects.html" class="nav-link text-sm font-medium hover:opacity-70 transition-opacity">Projects</a> <a href="contact.html" class="nav-link text-sm font-medium hover:opacity-70 transition-opacity">Contact</a> <a href="login.html" id="login-btn" class="px-4 py-2 rounded-md text-sm font-medium hover:opacity-80 transition-opacity">Login</a> <a href="signup.html" id="signup-btn" class="btn-interactive px-4 py-2 rounded-md text-sm font-medium font-semibold">Sign Up</a> <button id="theme-toggle" class="theme-toggle p-2 rounded-full transition-all" title="Toggle Dark/Light Mode">
+       <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+       </svg></button> <button id="audio-toggle" class="p-2 rounded-full transition-all" title="Toggle Background Music">
+       <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z" />
+       </svg></button>
+     </div><!-- Mobile Menu Button --> <button id="mobile-menu-btn" class="md:hidden p-2">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg></button>
+    </div><!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 p-4 rounded-lg glass">
+     <div class="flex flex-col gap-3"><a href="home.html" class="mobile-link py-2 hover:opacity-70 transition-opacity">Home</a> <a href="about.html" class="mobile-link py-2 hover:opacity-70 transition-opacity">About</a> <a href="skills.html" class="mobile-link py-2 hover:opacity-70 transition-opacity">Skills</a> <a href="projects.html" class="mobile-link py-2 hover:opacity-70 transition-opacity">Projects</a> <a href="contact.html" class="mobile-link py-2 hover:opacity-70 transition-opacity">Contact</a> <a href="login.html" id="mobile-login-btn" class="mobile-link py-2 hover:opacity-70 transition-opacity text-left">Login</a> <a href="signup.html" id="mobile-signup-btn" class="mobile-link py-2 hover:opacity-70 transition-opacity text-left">Sign Up</a>
+     </div>
+    </div>
+   </nav><!-- Hero Section with Particles Background -->
+   <section id="home" class="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden"><!-- Animated Background Gradient -->
+    <div id="hero-bg" class="absolute inset-0 animate-rotate-gradient"></div><!-- Floating Geometric Shapes (Multimedia Elements) -->
+    <div class="particles">
+     <div class="particle animate-float" style="left: 10%; top: 20%; width: 60px; height: 60px; background: rgba(102, 126, 234, 0.3); animation-delay: 0s;"></div>
+     <div class="particle animate-float" style="left: 80%; top: 30%; width: 40px; height: 40px; background: rgba(118, 75, 162, 0.3); animation-delay: 2s;"></div>
+     <div class="particle animate-float" style="left: 15%; top: 70%; width: 50px; height: 50px; background: rgba(102, 126, 234, 0.2); animation-delay: 4s;"></div>
+     <div class="particle animate-float" style="left: 85%; top: 80%; width: 70px; height: 70px; background: rgba(118, 75, 162, 0.2); animation-delay: 1s;"></div>
+     <div class="particle animate-float" style="left: 50%; top: 15%; width: 45px; height: 45px; background: rgba(102, 126, 234, 0.25); animation-delay: 3s;"></div>
+    </div><!-- Hero Content -->
+    <div class="relative z-10 max-w-6xl mx-auto text-center"><!-- Animated Badge -->
+     <div class="animate-fade-in-up"><span id="hero-badge" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium mb-8 glass"> <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span> Available for Projects </span>
+     </div><!-- Main Heading with Gradient Text -->
+     <h1 id="hero-title" class="font-playfair font-black text-6xl md:text-7xl lg:text-8xl leading-tight mb-6 animate-fade-in-up delay-100"><span id="main-title">Creative Digital Studio</span></h1><!-- Subtitle -->
+     <p id="hero-subtitle" class="text-xl md:text-2xl max-w-3xl mx-auto mb-10 opacity-90 animate-fade-in-up delay-200">Crafting innovative web experiences with cutting-edge technology and stunning design</p><!-- Audio Visualizer (Multimedia Feature) -->
+     <div class="flex justify-center gap-1 mb-10 animate-fade-in-up delay-300">
+      <div class="audio-bar w-1 bg-purple-500 rounded-full"></div>
+      <div class="audio-bar w-1 bg-purple-500 rounded-full"></div>
+      <div class="audio-bar w-1 bg-purple-500 rounded-full"></div>
+      <div class="audio-bar w-1 bg-purple-500 rounded-full"></div>
+      <div class="audio-bar w-1 bg-purple-500 rounded-full"></div>
+     </div><!-- CTA Buttons -->
+     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-400"><a id="cta-primary" href="projects.html" class="btn-interactive group px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-3"> <span id="cta-text">Explore Projects</span>
+       <svg class="w-5 h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+       </svg></a> <a id="cta-secondary" href="contact.html" class="btn-interactive px-10 py-4 rounded-full font-semibold text-lg border-2 transition-all duration-300 hover:scale-105"> Contact Me </a>
+     </div><!-- Stats Cards -->
+     <div class="grid grid-cols-3 gap-6 max-w-2xl mx-auto mt-16 animate-fade-in-up delay-500">
+      <div id="stat-card-1" class="glass p-6 rounded-2xl animate-pulse-custom">
+       <p class="font-playfair font-bold text-4xl mb-2">50+</p>
+       <p class="text-sm opacity-70">Projects</p>
+      </div>
+      <div id="stat-card-2" class="glass p-6 rounded-2xl animate-pulse-custom" style="animation-delay: 0.2s;">
+       <p class="font-playfair font-bold text-4xl mb-2">30+</p>
+       <p class="text-sm opacity-70">Clients</p>
+      </div>
+      <div id="stat-card-3" class="glass p-6 rounded-2xl animate-pulse-custom" style="animation-delay: 0.4s;">
+       <p class="font-playfair font-bold text-4xl mb-2">5+</p>
+       <p class="text-sm opacity-70">Years</p>
+      </div>
+     </div>
+    </div><!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-subtle">
+     <svg class="w-6 h-6 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+     </svg>
+    </div>
+   </section><!-- About Section with Image Gallery -->
+   <section id="about" class="py-24 px-6 relative">
+    <div class="max-w-7xl mx-auto">
+     <div class="grid lg:grid-cols-2 gap-16 items-center"><!-- Left: Text Content -->
+      <div class="animate-slide-in-left"><span id="about-badge" class="inline-block px-4 py-2 rounded-full text-sm font-medium mb-6 border-2"> About Me </span>
+       <h2 id="about-heading" class="font-playfair font-bold text-5xl md:text-6xl mb-6">Passionate Designer &amp; Developer</h2>
+       <p id="about-description" class="text-lg leading-relaxed mb-8 opacity-80">I'm a creative professional specializing in web development and multimedia design. With expertise in HTML5, CSS3, JavaScript, and ReactJS, I create engaging digital experiences that combine aesthetic beauty with functional excellence. My passion lies in transforming ideas into interactive realities.</p><!-- Achievement Tags -->
+       <div class="flex flex-wrap gap-3 mb-8"><span class="px-4 py-2 rounded-full glass text-sm font-medium">HTML5 Expert</span> <span class="px-4 py-2 rounded-full glass text-sm font-medium">CSS3 Specialist</span> <span class="px-4 py-2 rounded-full glass text-sm font-medium">JavaScript Pro</span> <span class="px-4 py-2 rounded-full glass text-sm font-medium">React Developer</span> <span class="px-4 py-2 rounded-full glass text-sm font-medium">UI/UX Designer</span>
+       </div><button id="download-cv" class="btn-interactive px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg> Download CV </button>
+      </div><!-- Right: Image Gallery (Multimedia Elements) -->
+      <div class="animate-slide-in-right">
+       <div class="relative"><!-- Main Image Card with SVG Graphics -->
+        <div id="about-main-card" class="relative rounded-3xl overflow-hidden shadow-2xl">
+         <div class="aspect-square flex items-center justify-center p-12"><!-- Creative SVG Illustration -->
+          <svg viewBox="0 0 400 400" class="w-full h-full"><defs>
+            <lineargradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+             <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+             <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+            </lineargradient>
+           </defs> <!-- Background Circle --> <circle cx="200" cy="200" r="180" fill="url(#grad1)" opacity="0.1" class="animate-pulse-custom" /> <!-- Laptop Illustration --> <rect x="100" y="150" width="200" height="140" rx="8" fill="url(#grad1)" opacity="0.8" /> <rect x="110" y="160" width="180" height="100" fill="#1a1a2e" /> <rect x="180" y="290" width="40" height="8" rx="4" fill="url(#grad1)" /> <rect x="80" y="298" width="240" height="4" rx="2" fill="url(#grad1)" /> <!-- Code Lines --> <line x1="130" y1="180" x2="200" y2="180" stroke="#667eea" stroke-width="3" stroke-linecap="round" /> <line x1="130" y1="200" x2="240" y2="200" stroke="#764ba2" stroke-width="3" stroke-linecap="round" /> <line x1="130" y1="220" x2="180" y2="220" stroke="#667eea" stroke-width="3" stroke-linecap="round" /> <line x1="130" y1="240" x2="220" y2="240" stroke="#764ba2" stroke-width="3" stroke-linecap="round" /> <!-- Floating Elements --> <circle cx="320" cy="100" r="15" fill="#667eea" class="animate-float" /> <rect x="60" y="80" width="25" height="25" fill="#764ba2" class="animate-float" style="animation-delay: 1s;" /> <polygon points="340,250 355,270 325,270" fill="#667eea" class="animate-float" style="animation-delay: 2s;" />
+          </svg>
+         </div>
+        </div><!-- Floating Info Cards -->
+        <div id="about-float-card-1" class="absolute -left-4 top-1/4 glass p-4 rounded-xl shadow-xl animate-float">
+         <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-2xl">
+           💻
+          </div>
+          <div>
+           <p class="font-semibold">Web Dev</p>
+           <p class="text-xs opacity-60">5+ Years</p>
+          </div>
+         </div>
+        </div>
+        <div id="about-float-card-2" class="absolute -right-4 bottom-1/4 glass p-4 rounded-xl shadow-xl animate-float" style="animation-delay: 1s;">
+         <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-2xl">
+           🎨
+          </div>
+          <div>
+           <p class="font-semibold">Design</p>
+           <p class="text-xs opacity-60">Expert</p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Skills Section with Progress Bars -->
+   <section id="skills" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto"><!-- Section Header -->
+     <div class="text-center mb-16"><span id="skills-badge" class="inline-block px-4 py-2 rounded-full text-sm font-medium mb-4 border-2"> Technical Skills </span>
+      <h2 id="skills-heading" class="font-playfair font-bold text-5xl md:text-6xl mb-4">My Expertise</h2>
+      <p class="text-lg opacity-70 max-w-2xl mx-auto">Proficient in modern web technologies and multimedia tools</p>
+     </div><!-- Skills Grid -->
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Skill Card 1: HTML5 -->
+      <div class="skill-card glass p-8 rounded-3xl" data-skill="html">
+       <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-3xl shadow-lg">
+          <svg class="w-8 h-8" fill="white" viewBox="0 0 24 24"><path d="M12 18.178l4.62-1.256.623-7.922H9.026L8.822 7.89h8.626l.227-2.211H6.325l.636 7.263h7.82l-.261 2.842-2.52.667-2.52-.667-.162-1.805h-2.27l.329 3.696 4.633 1.253z" />
+          </svg>
+         </div>
+         <div>
+          <h3 class="font-bold text-xl">HTML5</h3>
+          <p class="text-sm opacity-60">Markup</p>
+         </div>
+        </div><span class="font-bold text-2xl">95%</span>
+       </div>
+       <div class="h-3 bg-gray-700 rounded-full overflow-hidden">
+        <div class="progress-bar h-full bg-gradient-to-r from-orange-500 to-red-600 rounded-full" data-progress="95" style="width: 0%;"></div>
+       </div>
+      </div><!-- Skill Card 2: CSS3 -->
+      <div class="skill-card glass p-8 rounded-3xl" data-skill="css">
+       <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-3xl shadow-lg">
+          <svg class="w-8 h-8" fill="white" viewBox="0 0 24 24"><path d="M4.192 3.143h15.615l-1.42 16.034-6.404 1.812-6.369-1.813L4.192 3.143zM16.9 6.424l-9.8-.002.158 1.949 7.529.002-.189 2.02H9.66l.179 1.913h4.597l-.272 2.62-2.164.598-2.197-.603-.141-1.569h-1.94l.216 2.867L12 17.484l3.995-1.137.905-9.923z" />
+          </svg>
+         </div>
+         <div>
+          <h3 class="font-bold text-xl">CSS3</h3>
+          <p class="text-sm opacity-60">Styling</p>
+         </div>
+        </div><span class="font-bold text-2xl">90%</span>
+       </div>
+       <div class="h-3 bg-gray-700 rounded-full overflow-hidden">
+        <div class="progress-bar h-full bg-gradient-to-r from-blue-500 to-blue-700 rounded-full" data-progress="90" style="width: 0%;"></div>
+       </div>
+      </div><!-- Skill Card 3: JavaScript -->
+      <div class="skill-card glass p-8 rounded-3xl" data-skill="js">
+       <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center text-3xl shadow-lg">
+          <svg class="w-8 h-8" fill="black" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3zm16.525 13.707c-.131-.821-.666-1.511-2.252-2.155-.552-.259-1.165-.438-1.349-.854-.068-.248-.078-.382-.034-.531.114-.417.443-.504.859-.504.42 0 .688.099.953.368.232.236.464.515.57.515.267-.179.424-.286.674-.458-.341-.534-.753-.862-1.511-1.047-.339-.081-.784-.122-1.183-.047-.919.181-1.558.724-1.848 1.475-.291.745-.112 1.636.666 2.103.775.466 1.916.572 2.081 1.016.164.441-.111.883-.666 1.024-.572.146-1.312-.033-1.839-.397-.342-.238-.548-.489-.776-.77l-.731.427c.343.618.732 1.061 1.347 1.396 1.032.563 2.444.658 2.945-.17.015-.026.04-.066.061-.098.212-.403.275-.918.084-1.376zM14.985 8.5c-.321 0-.633.018-.944.054-.311.036-.614.09-.906.162-.292.072-.571.162-.836.27-.265.108-.516.232-.751.372-.043.031-.084.061-.126.093v3.176l.126-.092c.327-.24.693-.426 1.084-.552.391-.126.809-.19 1.243-.19.229 0 .458.025.687.074.229.05.433.137.612.262.18.125.322.29.429.494.107.204.161.457.161.758 0 .306-.057.573-.17.8-.113.227-.271.421-.472.581-.201.16-.445.282-.731.366-.286.084-.603.126-.951.126H12.5v1h1.536c.409 0 .789.049 1.139.147.35.098.655.252.914.462.259.21.46.476.605.799.145.323.217.716.217 1.179 0 .419-.075.79-.226 1.114-.151.324-.366.596-.645.817-.279.221-.614.387-1.005.498-.391.111-.826.167-1.306.167-.654 0-1.244-.086-1.771-.259-.527-.173-.976-.409-1.347-.708v3.334c.235.14.486.264.751.372.265.108.544.198.836.27.292.072.595.126.906.162.311.036.623.054.944.054.876 0 1.667-.126 2.373-.378.706-.252 1.309-.614 1.809-1.086.5-.472.886-1.048 1.158-1.728.272-.68.408-1.452.408-2.316 0-.688-.112-1.3-.337-1.838-.225-.538-.537-.996-.936-1.374-.399-.378-.876-.674-1.431-.888-.555-.214-1.169-.346-1.843-.396.558-.165 1.056-.392 1.494-.681.438-.289.807-.627 1.107-1.014.3-.387.527-.813.681-1.278.154-.465.231-.951.231-1.458 0-.777-.132-1.457-.396-2.04-.264-.583-.628-1.069-1.092-1.458-.464-.389-1.012-.68-1.644-.873-.632-.193-1.313-.29-2.043-.29z" />
+          </svg>
+         </div>
+         <div>
+          <h3 class="font-bold text-xl">JavaScript</h3>
+          <p class="text-sm opacity-60">Programming</p>
+         </div>
+        </div><span class="font-bold text-2xl">88%</span>
+       </div>
+       <div class="h-3 bg-gray-700 rounded-full overflow-hidden">
+        <div class="progress-bar h-full bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full" data-progress="88" style="width: 0%;"></div>
+       </div>
+      </div><!-- Skill Card 4: ReactJS -->
+      <div class="skill-card glass p-8 rounded-3xl" data-skill="react">
+       <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-3xl shadow-lg">
+          <svg class="w-8 h-8" fill="white" viewbox="0 0 24 24"><path d="M12 10.11c1.03 0 1.87.84 1.87 1.89 0 1-.84 1.85-1.87 1.85S10.13 13 10.13 12c0-1.05.84-1.89 1.87-1.89M7.37 20c.63.38 2.01-.2 3.6-1.7-.52-.59-1.03-1.23-1.51-1.9-.82-.08-1.63-.2-2.4-.36-.51 2.14-.32 3.61.31 3.96m.71-5.74l-.29-.51c-.11.29-.22.58-.29.86.27.06.57.11.88.16l-.3-.51m6.54-.76l.81-1.5-.81-1.5c-.3-.53-.62-1-.91-1.47C13.17 9 12.6 9 12 9c-.6 0-1.17 0-1.71.03-.29.47-.61.94-.91 1.47L8.57 12l.81 1.5c.3.53.62 1 .91 1.47.54.03 1.11.03 1.71.03.6 0 1.17 0 1.71-.03.29-.47.61-.94.91-1.47M12 6.78c-.19.22-.39.45-.59.72h1.18c-.2-.27-.4-.5-.59-.72m0 10.44c.19-.22.39-.45.59-.72h-1.18c.2.27.4.5.59.72M16.62 4c-.62-.38-2 .2-3.59 1.7.52.59 1.03 1.23 1.51 1.9.82.08 1.63.2 2.4.36.51-2.14.32-3.61-.32-3.96m-.7 5.74l.29.51c.11-.29.22-.58.29-.86-.27-.06-.57-.11-.88-.16l.3.51m1.45-7.05c1.47.84 1.63 3.05 1.01 5.63 2.54.75 4.37 1.99 4.37 3.68s-1.83 2.93-4.37 3.68c.62 2.58.46 4.79-1.01 5.63-1.46.84-3.45-.12-5.37-1.95-1.92 1.83-3.91 2.79-5.38 1.95-1.46-.84-1.62-3.05-1-5.63-2.54-.75-4.37-1.99-4.37-3.68s1.83-2.93 4.37-3.68c-.62-2.58-.46-4.79 1-5.63 1.47-.84 3.46.12 5.38 1.95 1.92-1.83 3.91-2.79 5.37-1.95M17.08 12c.34.75.64 1.5.89 2.26 2.1-.63 3.28-1.53 3.28-2.26 0-.73-1.18-1.63-3.28-2.26-.25.76-.55 1.51-.89 2.26M6.92 12c-.34-.75-.64-1.5-.89-2.26-2.1.63-3.28 1.53-3.28 2.26 0 .73 1.18 1.63 3.28 2.26.25-.76.55-1.51.89-2.26m9.09 5.74c.3.21.57.32.78.32.36 0 .64-.29.64-.75 0-.96-.56-2.29-1.45-3.88-.39.69-.8 1.37-1.21 2.01.65.62 1.03 1.26 1.24 2.3m-10.02 0c.21-1.04.59-1.68 1.24-2.3-.41-.64-.82-1.32-1.21-2.01-.89 1.59-1.45 2.92-1.45 3.88 0 .46.28.75.64.75.21 0 .48-.11.78-.32m7.02-13.48c-.65-.62-1.03-1.26-1.24-2.3-.21 1.04-.59 1.68-1.24 2.3.41.64.82 1.32 1.21 2.01.39-.69.8-1.37 1.21-2.01.89-1.59 1.45-2.92 1.45-3.88 0-.46-.28-.75-.64-.75-.21 0-.48.11-.78.32z" />
+          </svg>
+         </div>
+         <div>
+          <h3 class="font-bold text-xl">ReactJS</h3>
+          <p class="text-sm opacity-60">Framework</p>
+         </div>
+        </div><span class="font-bold text-2xl">85%</span>
+       </div>
+       <div class="h-3 bg-gray-700 rounded-full overflow-hidden">
+        <div class="progress-bar h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full" data-progress="85" style="width: 0%;"></div>
+       </div>
+      </div><!-- Skill Card 5: Responsive Design -->
+      <div class="skill-card glass p-8 rounded-3xl" data-skill="responsive">
+       <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center text-3xl shadow-lg">
+          📱
+         </div>
+         <div>
+          <h3 class="font-bold text-xl">Responsive</h3>
+          <p class="text-sm opacity-60">Design</p>
+         </div>
+        </div><span class="font-bold text-2xl">92%</span>
+       </div>
+       <div class="h-3 bg-gray-700 rounded-full overflow-hidden">
+        <div class="progress-bar h-full bg-gradient-to-r from-green-400 to-emerald-600 rounded-full" data-progress="92" style="width: 0%;"></div>
+       </div>
+      </div><!-- Skill Card 6: Photoshop -->
+      <div class="skill-card glass p-8 rounded-3xl" data-skill="photoshop">
+       <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-800 flex items-center justify-center text-3xl shadow-lg">
+          <svg class="w-8 h-8" fill="white" viewbox="0 0 24 24"><path d="M9.85 8.42c.68 0 1.16.05 1.44.13v3.93c-.32.08-.82.12-1.44.12-1.77 0-2.94-.89-2.94-2.42 0-1.48 1.09-1.76 2.94-1.76M3 3v18h18V3H3zm11.5 11.83c-.48.36-1.14.64-1.96.8v2.88H9.86v-2.75c-.81-.06-1.61-.23-2.29-.5l.31-2.35c.78.33 1.66.55 2.61.55.73 0 1.16-.23 1.16-.68 0-.43-.43-.64-1.39-.95-1.66-.52-2.94-1.34-2.94-2.92 0-1.49 1.05-2.63 2.92-3.03V4.17h2.68v2.71c.8.06 1.43.18 1.98.36l-.37 2.24c-.48-.16-1.21-.38-2.13-.38-.71 0-1.04.21-1.04.58 0 .38.5.59 1.54.95 1.93.61 3.07 1.43 3.07 3.05 0 1.51-.97 2.67-2.75 3.15" />
+          </svg>
+         </div>
+         <div>
+          <h3 class="font-bold text-xl">Photoshop</h3>
+          <p class="text-sm opacity-60">Graphics</p>
+         </div>
+        </div><span class="font-bold text-2xl">80%</span>
+       </div>
+       <div class="h-3 bg-gray-700 rounded-full overflow-hidden">
+        <div class="progress-bar h-full bg-gradient-to-r from-blue-600 to-indigo-800 rounded-full" data-progress="80" style="width: 0%;"></div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Projects Section with Interactive Cards -->
+   <section id="projects" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto"><!-- Section Header -->
+     <div class="text-center mb-16"><span id="projects-badge" class="inline-block px-4 py-2 rounded-full text-sm font-medium mb-4 border-2"> Portfolio </span>
+      <h2 id="projects-heading" class="font-playfair font-bold text-5xl md:text-6xl mb-4">Featured Projects</h2>
+      <p class="text-lg opacity-70 max-w-2xl mx-auto">A showcase of my best work in web development and design</p>
+     </div><!-- Projects Grid -->
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Project Card 1 -->
+      <div class="project-card glass rounded-3xl overflow-hidden group cursor-pointer">
+       <div class="aspect-video bg-gradient-to-br from-purple-500 to-indigo-600 relative overflow-hidden flex items-center justify-center"><!-- SVG Illustration -->
+        <svg viewBox="0 0 200 200" class="w-32 h-32 transform group-hover:scale-110 transition-transform duration-500"><circle cx="100" cy="100" r="80" fill="white" opacity="0.2" /> <rect x="60" y="70" width="80" height="60" rx="4" fill="white" opacity="0.9" /> <circle cx="100" cy="100" r="15" fill="#667eea" /> <path d="M75 90 L90 105 L125 70" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" />
+        </svg>
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center"><button class="opacity-0 group-hover:opacity-100 transition-opacity px-6 py-3 rounded-full bg-white text-black font-semibold transform translate-y-4 group-hover:translate-y-0"> View Details </button>
+        </div>
+       </div>
+       <div class="p-6">
+        <div class="flex items-center gap-2 mb-3"><span class="px-3 py-1 rounded-full bg-purple-500 bg-opacity-20 text-xs font-medium">Web App</span> <span class="px-3 py-1 rounded-full bg-indigo-500 bg-opacity-20 text-xs font-medium">ReactJS</span>
+        </div>
+        <h3 class="font-playfair font-bold text-2xl mb-2">Task Manager Pro</h3>
+        <p class="opacity-70 text-sm">A modern task management application with real-time updates and collaborative features.</p>
+       </div>
+      </div><!-- Project Card 2 -->
+      <div class="project-card glass rounded-3xl overflow-hidden group cursor-pointer">
+       <div class="aspect-video bg-gradient-to-br from-pink-500 to-rose-600 relative overflow-hidden flex items-center justify-center">
+        <svg viewBox="0 0 200 200" class="w-32 h-32 transform group-hover:scale-110 transition-transform duration-500"><circle cx="100" cy="100" r="80" fill="white" opacity="0.2" /> <rect x="50" y="60" width="100" height="80" rx="8" fill="white" opacity="0.9" /> <rect x="60" y="75" width="35" height="25" rx="2" fill="#ec4899" /> <rect x="60" y="105" width="35" height="25" rx="2" fill="#ec4899" /> <rect x="105" y="75" width="35" height="55" rx="2" fill="#f43f5e" />
+        </svg>
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center"><button class="opacity-0 group-hover:opacity-100 transition-opacity px-6 py-3 rounded-full bg-white text-black font-semibold transform translate-y-4 group-hover:translate-y-0"> View Details </button>
+        </div>
+       </div>
+       <div class="p-6">
+        <div class="flex items-center gap-2 mb-3"><span class="px-3 py-1 rounded-full bg-pink-500 bg-opacity-20 text-xs font-medium">E-Commerce</span> <span class="px-3 py-1 rounded-full bg-rose-500 bg-opacity-20 text-xs font-medium">JavaScript</span>
+        </div>
+        <h3 class="font-playfair font-bold text-2xl mb-2">Fashion Store</h3>
+        <p class="opacity-70 text-sm">A responsive e-commerce platform with advanced filtering and checkout system.</p>
+       </div>
+      </div><!-- Project Card 3 -->
+      <div class="project-card glass rounded-3xl overflow-hidden group cursor-pointer">
+       <div class="aspect-video bg-gradient-to-br from-cyan-500 to-blue-600 relative overflow-hidden flex items-center justify-center">
+        <svg viewBox="0 0 200 200" class="w-32 h-32 transform group-hover:scale-110 transition-transform duration-500"><circle cx="100" cy="100" r="80" fill="white" opacity="0.2" /> <circle cx="100" cy="100" r="50" fill="white" opacity="0.9" /> <path d="M100 60 L100 100 L130 115" stroke="#06b6d4" stroke-width="4" stroke-linecap="round" /> <circle cx="100" cy="60" r="5" fill="#06b6d4" /> <circle cx="140" cy="100" r="5" fill="#06b6d4" /> <circle cx="100" cy="140" r="5" fill="#06b6d4" /> <circle cx="60" cy="100" r="5" fill="#06b6d4" />
+        </svg>
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center"><button class="opacity-0 group-hover:opacity-100 transition-opacity px-6 py-3 rounded-full bg-white text-black font-semibold transform translate-y-4 group-hover:translate-y-0"> View Details </button>
+        </div>
+       </div>
+       <div class="p-6">
+        <div class="flex items-center gap-2 mb-3"><span class="px-3 py-1 rounded-full bg-cyan-500 bg-opacity-20 text-xs font-medium">Dashboard</span> <span class="px-3 py-1 rounded-full bg-blue-500 bg-opacity-20 text-xs font-medium">CSS3</span>
+        </div>
+        <h3 class="font-playfair font-bold text-2xl mb-2">Analytics Dashboard</h3>
+        <p class="opacity-70 text-sm">Interactive data visualization dashboard with charts and real-time metrics.</p>
+       </div>
+      </div><!-- Project Card 4 -->
+      <div class="project-card glass rounded-3xl overflow-hidden group cursor-pointer">
+       <div class="aspect-video bg-gradient-to-br from-green-500 to-emerald-600 relative overflow-hidden flex items-center justify-center">
+        <svg viewBox="0 0 200 200" class="w-32 h-32 transform group-hover:scale-110 transition-transform duration-500"><circle cx="100" cy="100" r="80" fill="white" opacity="0.2" /> <path d="M70 110 Q100 70 130 110" stroke="white" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.9" /> <circle cx="85" cy="90" r="8" fill="white" opacity="0.9" /> <circle cx="115" cy="90" r="8" fill="white" opacity="0.9" /> <circle cx="100" cy="50" r="40" stroke="white" stroke-width="4" fill="none" opacity="0.5" />
+        </svg>
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center"><button class="opacity-0 group-hover:opacity-100 transition-opacity px-6 py-3 rounded-full bg-white text-black font-semibold transform translate-y-4 group-hover:translate-y-0"> View Details </button>
+        </div>
+       </div>
+       <div class="p-6">
+        <div class="flex items-center gap-2 mb-3"><span class="px-3 py-1 rounded-full bg-green-500 bg-opacity-20 text-xs font-medium">Social</span> <span class="px-3 py-1 rounded-full bg-emerald-500 bg-opacity-20 text-xs font-medium">HTML5</span>
+        </div>
+        <h3 class="font-playfair font-bold text-2xl mb-2">Social Connect</h3>
+        <p class="opacity-70 text-sm">Modern social media platform with messaging and content sharing features.</p>
+       </div>
+      </div><!-- Project Card 5 -->
+      <div class="project-card glass rounded-3xl overflow-hidden group cursor-pointer">
+       <div class="aspect-video bg-gradient-to-br from-orange-500 to-amber-600 relative overflow-hidden flex items-center justify-center">
+        <svg viewBox="0 0 200 200" class="w-32 h-32 transform group-hover:scale-110 transition-transform duration-500"><circle cx="100" cy="100" r="80" fill="white" opacity="0.2" /> <rect x="60" y="60" width="80" height="80" rx="8" fill="white" opacity="0.9" /> <rect x="70" y="90" width="20" height="40" fill="#f97316" /> <rect x="110" y="70" width="20" height="60" fill="#f59e0b" /> <text x="100" y="45" text-anchor="middle" font-size="24" fill="white" font-weight="bold">
+          📊
+         </text>
+        </svg>
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center"><button class="opacity-0 group-hover:opacity-100 transition-opacity px-6 py-3 rounded-full bg-white text-black font-semibold transform translate-y-4 group-hover:translate-y-0"> View Details </button>
+        </div>
+       </div>
+       <div class="p-6">
+        <div class="flex items-center gap-2 mb-3"><span class="px-3 py-1 rounded-full bg-orange-500 bg-opacity-20 text-xs font-medium">Finance</span> <span class="px-3 py-1 rounded-full bg-amber-500 bg-opacity-20 text-xs font-medium">React</span>
+        </div>
+        <h3 class="font-playfair font-bold text-2xl mb-2">Budget Tracker</h3>
+        <p class="opacity-70 text-sm">Personal finance app with expense tracking and budget planning tools.</p>
+       </div>
+      </div><!-- Project Card 6 -->
+      <div class="project-card glass rounded-3xl overflow-hidden group cursor-pointer">
+       <div class="aspect-video bg-gradient-to-br from-violet-500 to-purple-600 relative overflow-hidden flex items-center justify-center">
+        <svg viewBox="0 0 200 200" class="w-32 h-32 transform group-hover:scale-110 transition-transform duration-500"><circle cx="100" cy="100" r="80" fill="white" opacity="0.2" /> <polygon points="100,50 130,90 110,90 130,130 70,95 90,95" fill="white" opacity="0.9" />
+        </svg>
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center"><button class="opacity-0 group-hover:opacity-100 transition-opacity px-6 py-3 rounded-full bg-white text-black font-semibold transform translate-y-4 group-hover:translate-y-0"> View Details </button>
+        </div>
+       </div>
+       <div class="p-6">
+        <div class="flex items-center gap-2 mb-3"><span class="px-3 py-1 rounded-full bg-violet-500 bg-opacity-20 text-xs font-medium">Portfolio</span> <span class="px-3 py-1 rounded-full bg-purple-500 bg-opacity-20 text-xs font-medium">CSS</span>
+        </div>
+        <h3 class="font-playfair font-bold text-2xl mb-2">Creative Portfolio</h3>
+        <p class="opacity-70 text-sm">Stunning portfolio website for photographers with gallery and lightbox.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section with Form -->
+   <section id="contact" class="py-24 px-6">
+    <div class="max-w-4xl mx-auto"><!-- Section Header -->
+     <div class="text-center mb-16"><span id="contact-badge" class="inline-block px-4 py-2 rounded-full text-sm font-medium mb-4 border-2"> Get In Touch </span>
+      <h2 id="contact-heading" class="font-playfair font-bold text-5xl md:text-6xl mb-4">Let's Work Together</h2>
+      <p class="text-lg opacity-70 max-w-2xl mx-auto">Have a project in mind? I'd love to hear from you. Send me a message and I'll respond as soon as possible.</p>
+     </div><!-- Contact Form -->
+     <form id="contact-form" class="glass p-8 md:p-12 rounded-3xl">
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+       <div><label for="name" class="block text-sm font-medium mb-2 opacity-80">Full Name</label> <input type="text" id="name" name="name" class="form-input w-full px-4 py-3 rounded-xl bg-white bg-opacity-5 border border-white border-opacity-10 focus:border-purple-500 focus:outline-none" placeholder="John Doe" required>
+       </div>
+       <div><label for="email" class="block text-sm font-medium mb-2 opacity-80">Email Address</label> <input type="email" id="email" name="email" class="form-input w-full px-4 py-3 rounded-xl bg-white bg-opacity-5 border border-white border-opacity-10 focus:border-purple-500 focus:outline-none" placeholder="john@example.com" required>
+       </div>
+      </div>
+      <div class="mb-6"><label for="subject" class="block text-sm font-medium mb-2 opacity-80">Subject</label> <input type="text" id="subject" name="subject" class="form-input w-full px-4 py-3 rounded-xl bg-white bg-opacity-5 border border-white border-opacity-10 focus:border-purple-500 focus:outline-none" placeholder="Project Inquiry" required>
+      </div>
+      <div class="mb-6"><label for="message" class="block text-sm font-medium mb-2 opacity-80">Message</label> <textarea id="message" name="message" rows="6" class="form-input w-full px-4 py-3 rounded-xl bg-white bg-opacity-5 border border-white border-opacity-10 focus:border-purple-500 focus:outline-none resize-none" placeholder="Tell me about your project..." required></textarea>
+      </div><button type="submit" id="submit-btn" class="btn-interactive w-full px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"> <span id="submit-text">Send Message</span>
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+       </svg></button> <!-- Success Message (Hidden by default) -->
+      <div id="success-message" class="hidden mt-6 p-4 rounded-xl bg-green-500 bg-opacity-20 border border-green-500 border-opacity-30">
+       <p class="text-center text-green-400 font-medium">✓ Message sent successfully! I'll get back to you soon.</p>
+      </div>
+     </form><!-- Contact Info -->
+     <div class="grid md:grid-cols-3 gap-6 mt-12">
+      <div class="glass p-6 rounded-2xl text-center">
+       <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-2xl mx-auto mb-4">
+        📧
+       </div>
+       <h3 class="font-semibold mb-2">Email</h3>
+       <p class="text-sm opacity-70">contact@portfolio.com</p>
+      </div>
+      <div class="glass p-6 rounded-2xl text-center">
+       <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-2xl mx-auto mb-4">
+        📱
+       </div>
+       <h3 class="font-semibold mb-2">Phone</h3>
+       <p class="text-sm opacity-70">+94 123 456 789</p>
+      </div>
+      <div class="glass p-6 rounded-2xl text-center">
+       <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-2xl mx-auto mb-4">
+        📍
+       </div>
+       <h3 class="font-semibold mb-2">Location</h3>
+       <p class="text-sm opacity-70">Colombo, Sri Lanka</p>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <!-- Authentication Modals -->
+   <div id="login-modal" class="modal-backdrop fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 px-6 hidden auth-modal">
+    <div class="modal-content glass rounded-3xl p-6 max-w-md w-full auth-content">
+      <button class="close-modal close-auth absolute top-4 right-4 text-xl">×</button>
+      <h3 class="font-playfair font-bold text-2xl mb-4">Sign In</h3>
+      <form id="login-form" class="auth-form">
+        <div id="login-error" class="auth-error hidden"></div>
+        <div id="login-success" class="auth-success hidden"></div>
+        <label class="block text-sm font-medium mb-2">Email</label>
+        <input name="email" type="email" class="form-input w-full px-4 py-3 rounded-xl mb-4" required>
+        <label class="block text-sm font-medium mb-2">Password</label>
+        <input name="password" type="password" class="form-input w-full px-4 py-3 rounded-xl mb-4" required>
+        <div class="flex items-center justify-between mb-4">
+          <label class="inline-flex items-center gap-2 text-sm"><input type="checkbox" name="remember"> Remember me</label>
+          <a href="#" class="text-sm opacity-70">Forgot?</a>
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl font-semibold" style="background-color: var(--primary, #667eea); color: white;">Sign In</button>
+      </form>
+    </div>
+   </div>
+
+   <div id="signup-modal" class="modal-backdrop fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 px-6 hidden auth-modal">
+    <div class="modal-content glass rounded-3xl p-6 max-w-md w-full auth-content">
+      <button class="close-modal close-auth absolute top-4 right-4 text-xl">×</button>
+      <h3 class="font-playfair font-bold text-2xl mb-4">Create Account</h3>
+      <form id="signup-form" class="auth-form">
+        <div id="signup-error" class="auth-error hidden"></div>
+        <div id="signup-success" class="auth-success hidden"></div>
+        <label class="block text-sm font-medium mb-2">Full Name</label>
+        <input name="name" type="text" class="form-input w-full px-4 py-3 rounded-xl mb-4" required>
+        <label class="block text-sm font-medium mb-2">Email</label>
+        <input name="email" type="email" class="form-input w-full px-4 py-3 rounded-xl mb-4" required>
+        <label class="block text-sm font-medium mb-2">Password</label>
+        <input name="password" type="password" class="form-input w-full px-4 py-3 rounded-xl mb-4" required>
+        <label class="block text-sm font-medium mb-2">Confirm Password</label>
+        <input name="confirm_password" type="password" class="form-input w-full px-4 py-3 rounded-xl mb-4" required>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl font-semibold" style="background-color: var(--primary, #667eea); color: white;">Create Account</button>
+      </form>
+    </div>
+   </div>
+
+   <!-- Footer -->
+   <footer id="footer" class="py-12 px-6 border-t border-white border-opacity-10">
+    <div class="max-w-7xl mx-auto">
+     <div class="grid md:grid-cols-4 gap-12 mb-12"><!-- Brand Column -->
+      <div class="md:col-span-2">
+       <div class="flex items-center gap-3 mb-4">
+        <svg class="w-10 h-10" viewBox="0 0 50 50" fill="none"><circle cx="25" cy="25" r="23" stroke="#667eea" stroke-width="2" /> <path d="M15 25 L25 15 L35 25 L25 35 Z" fill="#667eea" opacity="0.8" /> <circle cx="25" cy="25" r="5" fill="#764ba2" />
+        </svg><span class="font-playfair font-bold text-xl">Portfolio Studio</span>
+       </div>
+       <p class="opacity-70 text-sm leading-relaxed mb-4">Creating innovative web solutions with passion and expertise. Specializing in modern web technologies and multimedia design.</p>
+       <div class="flex gap-4"><a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:scale-110 transition-transform" aria-label="GitHub">
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+         </svg></a> <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:scale-110 transition-transform" aria-label="LinkedIn">
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+         </svg></a> <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:scale-110 transition-transform" aria-label="Twitter">
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+         </svg></a> <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:scale-110 transition-transform" aria-label="Dribbble">
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.34 3.684 1.887 6.684 1.992 7.308 2.3-1.555 3.936-4.02 4.395-6.87zm-6.115 7.808c-.153-.9-.75-4.032-2.19-7.77l-.066.02c-5.79 2.015-7.86 6.025-8.04 6.4 1.73 1.358 3.92 2.166 6.29 2.166 1.42 0 2.77-.29 4-.814zm-11.62-2.58c.232-.4 3.045-5.055 8.332-6.765.135-.045.27-.084.405-.12-.26-.585-.54-1.167-.832-1.74C7.17 11.775 2.206 11.71 1.756 11.7l-.004.312c0 2.633.998 5.037 2.634 6.855zm-2.42-8.955c.46.008 4.683.026 9.477-1.248-1.698-3.018-3.53-5.558-3.8-5.928-2.868 1.35-5.01 3.99-5.676 7.17zM9.6 2.052c.282.38 2.145 2.914 3.822 6 3.645-1.365 5.19-3.44 5.373-3.702-1.81-1.61-4.19-2.586-6.795-2.586-.825 0-1.63.1-2.4.285zm10.335 3.483c-.218.29-1.935 2.493-5.724 4.04.24.49.47.985.68 1.486.08.18.15.36.22.53 3.41-.43 6.8.26 7.14.33-.02-2.42-.88-4.64-2.31-6.38z" />
+         </svg></a>
+       </div>
+      </div><!-- Quick Links -->
+      <div>
+       <h4 class="font-playfair font-bold text-lg mb-4">Quick Links</h4>
+       <ul class="space-y-2 text-sm opacity-70">
+        <li><a href="home.html" class="hover:opacity-100 transition-opacity">Home</a></li>
+        <li><a href="about.html" class="hover:opacity-100 transition-opacity">About</a></li>
+        <li><a href="skills.html" class="hover:opacity-100 transition-opacity">Skills</a></li>
+        <li><a href="projects.html" class="hover:opacity-100 transition-opacity">Projects</a></li>
+        <li><a href="contact.html" class="hover:opacity-100 transition-opacity">Contact</a></li>
+       </ul>
+      </div><!-- Services -->
+      <div>
+       <h4 class="font-playfair font-bold text-lg mb-4">Services</h4>
+       <ul class="space-y-2 text-sm opacity-70">
+        <li><a href="#" class="hover:opacity-100 transition-opacity">Web Development</a></li>
+        <li><a href="#" class="hover:opacity-100 transition-opacity">UI/UX Design</a></li>
+        <li><a href="#" class="hover:opacity-100 transition-opacity">React Development</a></li>
+        <li><a href="#" class="hover:opacity-100 transition-opacity">Responsive Design</a></li>
+        <li><a href="#" class="hover:opacity-100 transition-opacity">Photoshop Design</a></li>
+       </ul>
+      </div>
+     </div><!-- Copyright -->
+     <div class="border-t border-white border-opacity-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p id="footer-text" class="text-sm opacity-60">© 2024 Portfolio Studio. All rights reserved.</p>
+      <div class="flex gap-6 text-sm opacity-60"><a href="#" class="hover:opacity-100 transition-opacity">Privacy Policy</a> <a href="#" class="hover:opacity-100 transition-opacity">Terms of Service</a> <a href="#" class="hover:opacity-100 transition-opacity">Cookie Policy</a>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9bd9dec77356b2f2',t:'MTc2ODM1OTQ5My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

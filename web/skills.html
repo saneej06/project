@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills — Portfolio Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>(function(){try{var t=localStorage.getItem('theme'); if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();</script>
+  <script src="javascript.js" defer></script>
+ </head>
+ <body class="h-full font-poppins">
+  <div id="app" class="w-full h-full overflow-auto">
+   <!-- Navigation -->
+   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+     <div class="flex items-center gap-3">
+      <svg id="logo-svg" class="w-12 h-12 animate-pulse-custom" viewBox="0 0 50 50" fill="none"><circle cx="25" cy="25" r="23" stroke-width="2" stroke="#667eea" /> <path d="M15 25 L25 15 L35 25 L25 35 Z" fill="#667eea" opacity="0.8" /> <circle cx="25" cy="25" r="5" fill="#764ba2" />
+      </svg><a href="home.html" id="logo-text" class="font-playfair font-bold text-2xl">Portfolio Studio</a>
+     </div>
+     <div class="hidden md:flex items-center gap-8"><a href="home.html" class="nav-link text-sm font-medium hover:opacity-70 transition-opacity">Home</a> <a href="about.html" class="nav-link text-sm font-medium hover:opacity-70 transition-opacity">About</a> <a href="skills.html" class="nav-link text-sm font-medium hover:opacity-70 transition-opacity">Skills</a> <a href="projects.html" class="nav-link text-sm font-medium hover:opacity-70 transition-opacity">Projects</a> <a href="contact.html" class="nav-link text-sm font-medium hover:opacity-70 transition-opacity">Contact</a> <a href="login.html" id="login-btn" class="px-4 py-2 rounded-md text-sm font-medium hover:opacity-80 transition-opacity">Login</a> <a href="signup.html" id="signup-btn" class="btn-interactive px-4 py-2 rounded-md text-sm font-medium font-semibold">Sign Up</a> <button id="theme-toggle" class="theme-toggle p-2 rounded-full transition-all" title="Toggle Dark/Light Mode" aria-label="Toggle theme"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" /></svg></button> <button id="audio-toggle" class="p-2 rounded-full transition-all" title="Toggle Background Music" aria-label="Toggle audio"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z" /></svg></button>
+     </div>
+    </div>
+   </nav>
+
+   <section id="skills" class="py-24 px-6 pt-20">
+    <div class="max-w-7xl mx-auto">
+     <div class="text-center mb-16"><span id="skills-badge" class="inline-block px-4 py-2 rounded-full text-sm font-medium mb-4 border-2"> Technical Skills </span>
+      <h2 id="skills-heading" class="font-playfair font-bold text-5xl md:text-6xl mb-4">My Expertise</h2>
+      <p class="text-lg opacity-70 max-w-2xl mx-auto">Proficient in modern web technologies and multimedia tools</p>
+     </div>
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Skill Card 1: HTML5 -->
+      <div class="skill-card glass p-8 rounded-3xl" data-skill="html">
+       <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-3xl shadow-lg">
+          <svg class="w-8 h-8" fill="white" viewBox="0 0 24 24"><path d="M12 18.178l4.62-1.256.623-7.922H9.026L8.822 7.89h8.626l.227-2.211H6.325l.636 7.263h7.82l-.261 2.842-2.52.667-2.52-.667-.162-1.805h-2.27l.329 3.696 4.633 1.253z" /></svg>
+         </div>
+         <div>
+          <h3 class="font-bold text-xl">HTML5</h3>
+          <p class="text-sm opacity-60">Markup</p>
+         </div>
+        </div>
+        <span class="font-bold text-2xl">95%</span>
+       </div>
+       <div class="h-3 bg-gray-700 rounded-full overflow-hidden">
+        <div class="progress-bar h-full bg-gradient-to-r from-orange-500 to-red-600 rounded-full" data-progress="95" style="width: 0%;"></div>
+       </div>
+      </div>
+
+      <!-- Skill Card 2: CSS3 -->
+      <div class="skill-card glass p-8 rounded-3xl" data-skill="css">
+       <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-3xl shadow-lg">
+          <svg class="w-8 h-8" fill="white" viewBox="0 0 24 24"><path d="M4.192 3.143h15.615l-1.42 16.034-6.404 1.812-6.369-1.813L4.192 3.143zM16.9 6.424l-9.8-.002.158 1.949 7.529.002-.189 2.02H9.66l.179 1.913h4.597l-.272 2.62-2.164.598-2.197-.603-.141-1.569h-1.94l.216 2.867L12 17.484l3.995-1.137.905-9.923z" /></svg>
+         </div>
+         <div>
+          <h3 class="font-bold text-xl">CSS3</h3>
+          <p class="text-sm opacity-60">Styling</p>
+         </div>
+        </div>
+        <span class="font-bold text-2xl">90%</span>
+       </div>
+       <div class="h-3 bg-gray-700 rounded-full overflow-hidden">
+        <div class="progress-bar h-full bg-gradient-to-r from-blue-500 to-blue-700 rounded-full" data-progress="90" style="width: 0%;"></div>
+       </div>
+      </div>
+
+      <!-- Skill Card 3: JavaScript -->
+      <div class="skill-card glass p-8 rounded-3xl" data-skill="js">
+       <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center text-3xl shadow-lg">
+          <svg class="w-8 h-8" fill="black" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3zm16.525 13.707c-.131-.821-.666-1.511-2.252-2.155-.552-.259-1.165-.438-1.349-.854-.068-.248-.078-.382-.034-.531.114-.417.443-.504.859-.504.42 0 .688.099.953.368.232.236.464.515.57.515.267-.179.424-.286.674-.458-.341-.534-.753-.862-1.511-1.047-.339-.081-.784-.122-1.183-.047-.919.181-1.558.724-1.848 1.475-.291.745-.112 1.636.666 2.103.775.466 1.916.572 2.081 1.016.164.441-.111.883-.666 1.024-.572.146-1.312-.033-1.839-.397-.342-.238-.548-.489-.776-.77l-.731.427c.343.618.732 1.061 1.347 1.396 1.032.563 2.444.658 2.945-.17.015-.026.04-.066.061-.098.212-.403.275-.918.084-1.376zM14.985 8.5c-.321 0-.633.018-.944.054-.311.036-.614.09-.906.162-.292.072-.571.162-.836.27-.265.108-.516.232-.751.372-.043.031-.084.061-.126.093v3.176l.126-.092c.327-.24.693-.426 1.084-.552.391-.126.809-.19 1.243-.19.229 0 .458.025.687.074.229.05.433.137.612.262.18.125.322.29.429.494.107.204.161.457.161.758 0 .306-.057.573-.17.8-.113.227-.271.421-.472.581-.201.16-.445.282-.731.366-.286.084-.603.126-.951.126H12.5v1h1.536c.409 0 .789.049 1.139.147.35.098.655.252.914.462.259.21.46.476.605.799.145.323.217.716.217 1.179 0 .419-.075.79-.226 1.114-.151.324-.366.596-.645.817-.279.221-.614.387-1.005.498-.391.111-.826.167-1.306.167-.654 0-1.244-.086-1.771-.259-.527-.173-.976-.409-1.347-.708v3.334c.235.14.486.264.751.372.265.108.544.198.836.27.292.072.595.126.906.162.311.036.623.054.944.054.876 0 1.667-.126 2.373-.378.706-.252 1.309-.614 1.809-1.086.5-.472.886-1.048 1.158-1.728.272-.68.408-1.452.408-2.316 0-.688-.112-1.3-.337-1.838-.225-.538-.537-.996-.936-1.374-.399-.378-.876-.674-1.431-.888-.555-.214-1.169-.346-1.843-.396.558-.165 1.056-.392 1.494-.681.438-.289.807-.627 1.107-1.014.3-.387.527-.813.681-1.278.154-.465.231-.951.231-1.458 0-.777-.132-1.457-.396-2.04-.264-.583-.628-1.069-1.092-1.458-.464-.389-1.012-.68-1.644-.873-.632-.193-1.313-.29-2.043-.29z" /></svg>
+         </div>
+         <div>
+          <h3 class="font-bold text-xl">JavaScript</h3>
+          <p class="text-sm opacity-60">Programming</p>
+         </div>
+        </div>
+        <span class="font-bold text-2xl">88%</span>
+       </div>
+       <div class="h-3 bg-gray-700 rounded-full overflow-hidden">
+        <div class="progress-bar h-full bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full" data-progress="88" style="width: 0%;"></div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <footer id="footer" class="py-12 px-6 border-t border-white border-opacity-10 mt-12">
+    <div class="max-w-7xl mx-auto text-center opacity-70">© 2024 Portfolio Studio. All rights reserved.</div>
+   </footer>
+  </div>
+ </body>
+</html>
